@@ -1,8 +1,10 @@
+using ChatApp.DataService;
 using ChatApp.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSignalR();
+builder.Services.AddSingleton<SharedDb>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("reactapp", builder =>
@@ -14,6 +16,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddControllers();
 var app = builder.Build();
 
 app.UseCors("reactapp");

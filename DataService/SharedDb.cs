@@ -1,4 +1,6 @@
 ﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
+using ChatApp.Models;
 
 namespace ChatApp.DataService
 {
